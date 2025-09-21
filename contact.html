@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leaders Training Centre</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- <body>hello -->
+    <!-- ======= Header / Navbar ======= -->
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="#" class="brand" aria-label="Leaders Training Centre">
+          <svg class="logo" viewBox="0 0 420 80" aria-hidden="true">
+            <text
+              x="0"
+              y="52"
+              font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto"
+              font-size="52"
+              font-weight="800"
+              fill="#e11d2e"
+            >
+              LEADERS
+            </text>
+            <text
+              x="5"
+              y="78"
+              font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto"
+              font-size="22"
+              font-weight="700"
+              letter-spacing="2"
+              fill="#111827"
+            >
+              TRAINING CENTRE
+            </text>
+          </svg>
+        </a>
+
+        <!-- Hamburger for mobile -->
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Open menu"
+        />
+        <label for="nav-toggle" class="hamburger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a class="active" href="home.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <!-- Sample dropdowns -->
+            <li class="has-dot">
+              <a href="#">Accounting & Finance</a><span class="dot">▼</span>
+              <ul class="dropdown">
+                <li><a href="cfa.html">CFA Training</a></li>
+                <li><a href="cma.html">CMA Qatar</a></li>
+                <li><a href="acca.html">ACCA</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <a class="cta cta--ghost" href="#">Get in Touch</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== Contact Section ===== -->
+    <section class="ltc-contact">
+      <div class="ltc-wrap">
+        <!-- Left: Form -->
+        <div class="ltc-card ltc-form">
+          <h2 class="ltc-title">Let’s Get In Touch</h2>
+          <p class="ltc-sub">
+            Fill the form and our team will contact you shortly.
+          </p>
+
+          <form
+            id="contactForm"
+            action="/LTC-website/contact.php"
+            method="POST"
+            novalidate
+          >
+            <div class="ltc-field">
+              <input id="name" name="name" type="text" required />
+              <label for="name">Your Name *</label>
+            </div>
+
+            <div class="ltc-grid-2">
+              <div class="ltc-field">
+                <input id="email" name="email" type="email" required />
+                <label for="email">Email *</label>
+              </div>
+              <div class="ltc-field">
+                <input id="phone" name="phone" type="tel" required />
+                <label for="phone">Phone (e.g., +974 …) *</label>
+              </div>
+            </div>
+
+            <div class="ltc-field">
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+              <label for="message">Your Message *</label>
+            </div>
+
+            <div class="ltc-actions">
+              <button type="submit" class="ltc-btn">
+                <i class="fa-solid fa-paper-plane"></i> Submit
+              </button>
+              <a
+                class="ltc-btn-outline"
+                href="https://wa.me/97431101550?text=Hi%2C%20I%27m%20messaging%20from%20Leaders%20Training%20Centre.%20Please%20help%20with%20the%20following%20enquiry%3A"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Info -->
+        <aside class="ltc-card ltc-info">
+          <h3 class="ltc-title-sm">Contact Details</h3>
+          <ul class="ltc-list">
+            <li><i class="fa-solid fa-phone"></i> +974 44664321</li>
+            <li>
+              <i class="fa-brands fa-whatsapp"></i> +974 31101550, +974 31109994
+            </li>
+            <li><i class="fa-regular fa-envelope"></i> info@leaders.qa</li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              Near Teyseer Petrol Station, E Ring Road, Al Thumama, Doha, Qatar
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a
+      id="whatsappLink"
+      href="https://wa.me/97431101550"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <span class="whatsapp-icon-wrap">
+        <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+      </span>
+      <span class="whatsapp-text">How can we help?</span>
+    </a>
+
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 600;
+        color: #fff;
+        border-radius: 9999px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        z-index: 2147483647;
+        overflow: hidden;
+      }
+      .whatsapp-icon-wrap {
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+      }
+      .whatsapp-icon {
+        font-size: 24px;
+        color: #fff;
+      }
+      .whatsapp-text {
+        background: #25d366;
+        padding: 12px 18px;
+        font-size: 16px;
+        white-space: nowrap;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s ease;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const phone = "97431101550";
+        const defaultMessage = encodeURIComponent(
+          "Hi, I'm messaging from the Leaders Training Centre website: *Please Type your following enquiry after this text*"
+        );
+        const link = `https://wa.me/${phone}?text=${defaultMessage}`;
+        const a = document.getElementById("whatsappLink");
+        if (a) a.href = link;
+      });
+    </script>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+      <div class="ft-top">
+        <div class="wrap ft-grid">
+          <div class="ft-col">
+            <h3 class="ft-title">About Us</h3>
+            <p class="ft-text">
+              Leaders Training Centre is Qatar’s premier provider of
+              comprehensive, high-quality courses, catering to personal and
+              professional development needs.
+            </p>
+          </div>
+          <div class="ft-col">
+            <h3 class="ft-title">Courses</h3>
+            <ul class="ft-list">
+              <li><a href="#">Accounting and Finance</a></li>
+              <li><a href="#">Soft Skills</a></li>
+              <li><a href="#">Health & Safety</a></li>
+              <li><a href="#">IT & Coding</a></li>
+              <li><a href="#">Languages</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h3 class="ft-title">Quick Links</h3>
+            <ul class="ft-list">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="index.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h3 class="ft-title">Contact</h3>
+            <ul class="ft-contact">
+              <li>Near Teyseer Petrol Station, E Ring Rd, Doha</li>
+              <li><a href="tel:+97444664321">+974 4466 4321</a></li>
+              <li><a href="mailto:info@leaders.qa">info@leaders.qa</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <div class="wrap">
+          <p class="copy">
+            © Copyright 2025 | Leaders Training Centre | All Rights Reserved |
+            Developed By Aleshba Ali
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
