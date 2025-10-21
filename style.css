@@ -1915,17 +1915,45 @@ section.why-us .why-grid {
 
 
 .who-join-cfa {
-  background: #f9fafb; /* light gray background */
+  background: #f9fafb;
   padding: 40px 20px;
   border-radius: 8px;
   max-width: 1100px;
   margin: 40px auto;
 }
 
+/* NEW — 2-column layout */
+.who-join-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.who-join-text {
+  flex: 1;
+}
+
+.who-join-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px; /* adjust this value until it aligns perfectly */
+}
+
+
+.who-video {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Your original styles */
 .who-join-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #e11d2e; /* brand red */
+  color: #e11d2e;
   margin-bottom: 20px;
 }
 
@@ -1945,12 +1973,23 @@ section.why-us .why-grid {
 }
 
 .who-join-list li::before {
-  content: "●";                /* custom bullet */
-  color: #e11d2e;              /* brand red */
+  content: "●";
+  color: #e11d2e;
   font-size: 0.9rem;
   position: absolute;
   left: 0;
-  top: 0.4em;                  /* vertical alignment */
+  top: 0.4em;
+}
+
+/* Responsive — stack on mobile */
+@media (max-width: 768px) {
+  .who-join-wrapper {
+    flex-direction: column;
+  }
+
+  .who-join-video {
+    width: 100%;
+  }
 }
 
 /* cfa syllabus */
