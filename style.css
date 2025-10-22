@@ -61,6 +61,7 @@ body{
   height:56px;
   width:auto;
   display:block;
+  padding-left: 15px;
 }
 
 /* hamburger */
@@ -2632,6 +2633,50 @@ section.why-us .why-grid {
   color: #fff;
 }
 
+.PowerBi-hero{
+
+   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/powerbi.png") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+}
+.premier-hero{
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/premier.png") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.photoedit-hero{
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/photoediting.png") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.photo-hero{
+   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/photography.png") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
 .nebosh-overlay h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -3759,3 +3804,40 @@ background-color: #f5f5f5;
   background-color: transparent;
   color: #e21d38;
 }
+
+
+/* === FORCE NAV LEFT (logo + all links), CTA far right === */
+
+/* put items in a single row, no “space-between” gap */
+.nav-wrap {
+  justify-content: flex-start !important;
+  padding-left: 12px !important;    /* smaller left padding */
+  gap: 10px !important;              /* space between logo and links */
+}
+
+/* make the nav only as wide as its contents (don’t stretch) */
+.nav {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+}
+
+/* links sit tight next to the logo */
+.nav-links {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: left !important;
+  gap: 16px !important;              /* adjust spacing between links */
+  margin: 0 !important;              /* kill any left margin */
+  padding: 0 !important;
+  
+}
+
+/* CTA goes to the far right */
+.cta {
+  margin-left: auto !important;
+  
+}
+
