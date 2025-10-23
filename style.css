@@ -2504,6 +2504,27 @@ section.why-us .why-grid {
   text-align: center;
   color: #fff;
 }
+.frenchandspanish-hero{
+   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/fren.jpeg") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.blah-blah{
+   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+              url("images/digital.png") center/cover no-repeat;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
 
 .pcfm-overlay h1 {
   font-size: 2.5rem;
