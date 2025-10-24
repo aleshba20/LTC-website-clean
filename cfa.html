@@ -83,52 +83,6 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- JSON-LD: Organization + Course + WebSite (site search) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "Leaders Training Centre",
-            "url": "https://leaders.qa/",
-            "logo": "https://leaders.qa/images/logo.png",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Doha",
-              "addressCountry": "QA"
-            },
-            "sameAs": [
-              "https://www.facebook.com/leaderstrainingcentredoha",
-              "https://www.instagram.com/leaderstrainingcentredoha",
-              "https://youtube.com/@leaderstrainingqatar"
-            ],
-            "description": "Professional training in Qatar across management, finance, health and safety, and languages."
-          },
-          {
-            "@type": "Course",
-            "name": "CFA® Level 1 Training Program",
-            "provider": {
-              "@type": "EducationalOrganization",
-              "name": "Leaders Training Centre",
-              "url": "https://leaders.qa/"
-            },
-            "educationalLevel": "Professional",
-            "url": "https://leaders.qa/cfa.html",
-            "description": "Instructor-led CFA® Level 1 preparation with small classes, videos, and discussion support in Doha, Qatar."
-          },
-          {
-            "@type": "WebSite",
-            "url": "https://leaders.qa/",
-            "name": "Leaders Training Centre",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://leaders.qa/search?q={query}",
-              "query-input": "required name=query"
-            }
-          }
-        ]
-      }
-    </script>
   </head>
 
   <body>
