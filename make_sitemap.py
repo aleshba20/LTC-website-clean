@@ -2,6 +2,14 @@ import os, datetime, urllib.parse, html
 
 BASE = "https://aleshba20.github.io/LTC-website-clean/"
 
+def encode_url(u: str) -> str:
+    """Percent-encode path, then XML-escape for <loc>."""
+    parts = urllib.parse.urlsplit(u)
+    # percent-encode path ONLY; leave scheme/host untouched
+    path = urllib.parse.quote(parts.path, safe="/-._~")
+    rebuilt = urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, "", ""))
+    return html.escape(rebuilt, quote=False)
+
 urls = []
 for root, _, files in os.walk("."):
     for f in files:
@@ -9,16 +17,17 @@ for root, _, files in os.walk("."):
             rel = os.path.relpath(os.path.join(root, f), ".").replace("\\", "/")
             if rel.startswith("."):
                 continue
-            urls.append(urllib.parse.urljoin(BASE, rel))
+            full = urllib.parse.urljoin(BASE, rel)
+            urls.append(full)
 
 today = datetime.date.today().isoformat()
 
-xml = ['<?xml version="1.0" encoding="UTF-8"?>',
-       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-for u in sorted(urls):
-    safe = html.escape(u, quote=False)  # <-- escapes & to &amp;
-    xml.append(f"  <url><loc>{safe}</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>")
-xml.append("</urlset>")
+lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+for u in sorted(urls, key=lambda s: s.lower()):
+    safe = encode_url(u)
+    lines.append(f'  <url><loc>{safe}</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>')
+lines.append('</urlset>')
 
-with open("sitemap.xml", "w", encoding="utf-8") as f:
-    f.write("\n".join(xml))
+with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
+    f.write("\n".join(lines) + "\n")
