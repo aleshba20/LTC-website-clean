@@ -4051,5 +4051,63 @@ background-color: #f5f5f5;
   transform: translateY(-2px);
 }
 
+/* ===== Policies section ===== */
+.policies { padding: 64px 0; background: #f8fafc; position: relative; }
+.policies:before {
+  content:""; position:absolute; inset:0 0 auto 0; height:6px;
+  background: linear-gradient(90deg, #e11d2e, #7f1d1d);
+  opacity:.15;
+}
+.policies-head { margin-bottom: 20px; }
+.policies-title { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+.policies-sub { color: #475569; margin: 0; }
+
+/* Scroll shell for wide tables */
+.table-scroll { overflow: auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+
+/* Base table */
+.policy-table { width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; }
+.policy-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  text-align: left; font-weight: 700; font-size: 14px; letter-spacing:.02em;
+  color: #0f172a; background: #fff;
+  border-bottom: 2px solid #e5e7eb; padding: 14px 16px;
+}
+.policy-table tbody th { font-weight: 600; color: #111827; }
+.policy-table tbody td, .policy-table tbody th { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+.policy-table tbody tr:nth-child(even) { background: #fafafa; }
+.policy-table tbody tr:hover { background: #fff5f5; }
+
+/* Actions */
+.th-actions { text-align: right; }
+.actions { text-align: right; white-space: nowrap; }
+.view-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 9999px;
+  font-weight: 600; font-size: 14px; text-decoration: none;
+  color: #fff; background: #e11d2e;
+  box-shadow: 0 6px 16px rgba(225,29,46,.25);
+}
+.view-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(225,29,46,.35); }
+.view-btn i { font-size: 14px; }
+
+/* Small screens: card layout for readability */
+@media (max-width: 720px) {
+  .table-scroll { box-shadow: none; background: transparent; }
+  .policy-table, .policy-table thead, .policy-table tbody, .policy-table tr, .policy-table th, .policy-table td { display: block; width: 100%; }
+  .policy-table thead { display: none; }
+  .policy-table tbody tr { margin-bottom: 14px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; overflow: hidden; }
+  .policy-table tbody td, .policy-table tbody th { border: 0; padding: 12px 14px; }
+  .policy-table tbody td.actions { padding-top: 0; text-align: left; border-top: 1px dashed #e5e7eb; margin: 8px 14px 14px; }
+  .policy-table tbody td:first-child { font-weight: 700; color:#e11d2e; }
+  .policy-table tbody th[scope="row"] { padding-top: 0; font-size: 16px; }
+}
+
+/* Footnote */
+.policies-note { margin-top: 14px; color: #64748b; font-size: 14px; }
+.policies-note a { color: #e11d2e; font-weight: 600; text-decoration: none; }
+.policies-note a:hover { text-decoration: underline; }
+
+
 
 
