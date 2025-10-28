@@ -378,7 +378,63 @@
 <br>
 
 
+ <section class="cfa-champions">
+      <h2 class="cfa-champions-title">ACCA Events at Leaders Training Center</h2>
 
+      <div class="cfa-champions-slider">
+        <div class="cfa-slide active">
+          <img src="images/IMG-20251028-WA0024.jpg" alt="CFA Champion 1" />
+        </div>
+
+        <div class="cfa-slide">
+          <img src="images/IMG-20251028-WA0026.jpg" alt="CFA Champion 2" />
+        </div>
+
+        <div class="cfa-slide">
+          <img src="images/IMG-20251028-WA0027.jpg" alt="CFA Champion 3" />
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="cfa-slider-controls">
+        <button class="cfa-prev">‹</button>
+        <button class="cfa-next">›</button>
+      </div>
+
+      <!-- Dots (3 for 3 slides) -->
+      <div class="cfa-slider-dots">
+        <span class="cfa-dot active"></span>
+        <span class="cfa-dot"></span>
+        <span class="cfa-dot"></span>
+      </div>
+    </section>
+    <script>
+      const slides = document.querySelectorAll(".cfa-slide");
+      const dots = document.querySelectorAll(".cfa-dot");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) =>
+          slide.classList.toggle("active", i === index)
+        );
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+        currentIndex = index;
+      }
+
+      document.querySelector(".cfa-prev").addEventListener("click", () => {
+        const nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(nextIndex);
+      });
+
+      document.querySelector(".cfa-next").addEventListener("click", () => {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showSlide(i));
+      });
+    </script>
 <section class="cma-features">
   <div class="cma-features-header">
     <h2>Why Leaders Training Centre?</h2>
