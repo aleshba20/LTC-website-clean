@@ -494,6 +494,64 @@
       });
     </script>
 
+    <section class="cfa-champions">
+      <h2 class="cfa-champions-title">Our Nebosh IGC Champions</h2>
+
+      <div class="cfa-champions-slider">
+        <div class="cfa-slide active">
+          <img src="IMG_E1291.JPG" alt="CFA Champion 1" />
+        </div>
+
+        <div class="cfa-slide">
+          <img src="IMG_1295.JPG" alt="CFA Champion 2" />
+        </div>
+
+        <div class="cfa-slide">
+          <img src="1.JPG" alt="CFA Champion 3" />
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="cfa-slider-controls">
+        <button class="cfa-prev">‹</button>
+        <button class="cfa-next">›</button>
+      </div>
+
+      <!-- Dots (3 for 3 slides) -->
+      <div class="cfa-slider-dots">
+        <span class="cfa-dot active"></span>
+        <span class="cfa-dot"></span>
+        <span class="cfa-dot"></span>
+      </div>
+    </section>
+    <script>
+      const slides = document.querySelectorAll(".cfa-slide");
+      const dots = document.querySelectorAll(".cfa-dot");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) =>
+          slide.classList.toggle("active", i === index)
+        );
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+        currentIndex = index;
+      }
+
+      document.querySelector(".cfa-prev").addEventListener("click", () => {
+        const nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(nextIndex);
+      });
+
+      document.querySelector(".cfa-next").addEventListener("click", () => {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showSlide(i));
+      });
+    </script>
+
     <!-- ===== FOOTER ===== (unchanged) -->
     <footer class="site-footer">
       <div class="ft-top">

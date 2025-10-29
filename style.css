@@ -1,8 +1,8 @@
 /* ===== Base ===== */
 :root{
-  --brand:#e11d2e;        /* red */
-  --ink:#111827;          /* near-black */
-  --muted:#6b7280;        /* gray-500 */
+  --brand:#e11d2e;       
+  --ink:#111827;          
+  --muted:#6b7280;        
   --bg:#ffffff;
   --ring:rgba(0,0,0,.08);
   --navH:84px;
@@ -37,18 +37,18 @@ body{
 }
 
 .nav-wrap {
-  position: fixed;      /* pin it */
+  position: fixed;      
   top: 0;
   left: 0;
-  width: 100%;          /* full width */
-  height: 85px;         /* set fixed height */
-  background: #fff;     /* make sure it has background */
-  z-index: 1000;        /* keep above other sections */
+  width: 100%;          
+  height: 85px;         
+  background: #fff;     
+  z-index: 1000;        
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* optional shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
 }
 
 .brand{
@@ -93,8 +93,8 @@ body{
 .nav{
   display:flex;
   align-items:center;
-  justify-content:flex-start;  /* links on left */
-  gap:28px;                    /* space between links and CTA */
+  justify-content:flex-start;  
+  gap:28px;                    
   width:100%;    
   margin: 0;
   padding: 0;
@@ -106,8 +106,8 @@ body{
   text-decoration:none;
   color:#111;
   font-weight:500;
-  font-size:14px;       /* smaller so all fit on laptops */
-  white-space:nowrap;   /* keep phrases on one line */
+  font-size:14px;       
+  white-space:nowrap;   
 }
 
 /* nav links container */
@@ -115,7 +115,7 @@ body{
   list-style:none;
   display:flex;
   align-items:center;
-  justify-content:flex-start; /* align links left */
+  justify-content:flex-start; 
   gap:20px;
   margin:0;
   padding:0;
@@ -146,11 +146,11 @@ body{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  height:40px;          /* slightly shorter */
-  padding:0 24px;       /* less padding so it takes less width */
+  height:40px;          
+  padding:0 24px;       
   border-radius:9999px;
   font-weight:600;
-  font-size:14px;       /* matches nav link size */
+  font-size:14px;      
   white-space:nowrap;
   color:#e11d2e;
   background:#ffffff;
@@ -332,7 +332,7 @@ body{
     flex-direction:column;
     align-items:flex-start;
     gap:14px;
-    margin-right:0;            /* reset push in mobile */
+    margin-right:0;            
   }
 
   .cta{
@@ -352,7 +352,7 @@ body{
 
 /* dropdowns */
 
-/* dropdown styling */
+
 .nav-links li {
   position: relative;
 }
@@ -467,9 +467,9 @@ body{
 
 /* Tighter, biased two-column layout for this section only */
 .course-block .grid {
-  display: grid; /* in case something else changed it */
+  display: grid; 
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important; /* more room for text */
-  column-gap: 20px !important; /* bring them closer together */
+  column-gap: 20px !important; 
   align-items: center;
 }
 
@@ -481,8 +481,8 @@ body{
 
 /* Image column: align but push slightly to the right */
 .course-block .course-image {
-  justify-self: start !important;   /* still aligns with text side */
-  margin-left: 60px !important;     /* push a little to the right */
+  justify-self: start !important;   
+  margin-left: 60px !important;     
   max-width: 380px !important;
   width: 100%;
   border-radius: 10px;
@@ -588,14 +588,14 @@ body{
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 16px; /* reduce space between text and image */
-    text-align: center; /* center text for balance */
+    gap: 16px; 
+    text-align: center; 
   }
 
   .course-image {
     justify-self: center;
-    max-width: 300px;   /* keep images smaller */
-    margin: 0 auto;     /* center horizontally */
+    max-width: 300px;  
+    margin: 0 auto;     
   }
 
   .course-image img {
@@ -1849,7 +1849,7 @@ section.why-us .why-grid {
 
 /* why cfa  */
 
-/* ===== Why CFA cards (matches your screenshot) ===== */
+
 :root{
   --brand:#e11d2e;      /* red tiles */
   --dark:#3b3f44;       /* dark tiles */
@@ -2024,7 +2024,7 @@ section.why-us .why-grid {
   margin: 0 auto;
   align-items: stretch;
 }
-/* Remove the media queries that reduce to 2 or 1 column */
+
 
 
 
@@ -2165,7 +2165,7 @@ section.why-us .why-grid {
 }
 
 .cfa-partner-card {
-  flex: 1 1 160px;   /* behaves like grid minmax(160px, 1fr) */
+  flex: 1 1 160px;   
   max-width: 200px;
 }
 
@@ -2177,7 +2177,7 @@ section.why-us .why-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 180px;                  /* keeps equal height */
+  height: 180px;                 
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform .2s ease, box-shadow .2s ease;
 }
@@ -2927,7 +2927,7 @@ section.why-us .why-grid {
 
 .acca-tabs {
   display: flex;
-  flex-wrap: wrap;          /* allow wrapping */
+  flex-wrap: wrap;          
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -2974,11 +2974,11 @@ section.why-us .why-grid {
 /* Large tablets / small laptops: 2 per row */
 @media (max-width: 992px) {
   .acca-tab {
-    flex: 1 1 calc(50% - 12px); /* two columns */
-    min-width: 0;               /* let it shrink */
+    flex: 1 1 calc(50% - 12px); 
+    min-width: 0;              
     font-size: 16px;
     padding: 14px 16px;
-    outline-offset: 1px;        /* tighter outline gap */
+    outline-offset: 1px;      
   }
 }
 
@@ -2986,12 +2986,12 @@ section.why-us .why-grid {
 @media (max-width: 600px) {
   .acca-tabs { gap: 10px; }
   .acca-tab {
-    flex: 1 1 100%;             /* one per row */
+    flex: 1 1 100%;             
     width: 100%;
     font-size: 15px;
     padding: 14px;
     border-radius: 8px;
-    outline-offset: 0;          /* minimize visual jump */
+    outline-offset: 0;          
   }
   .acca-card { padding: 16px; }
 }
@@ -3010,26 +3010,26 @@ section.why-us .why-grid {
 .acca-card ul { margin: 0; padding-left: 20px; }
 .acca-card li { margin-bottom: 10px; line-height: 1.6; }
 
-/* Optional: make long labels break nicely on narrow tabs */
+
 .acca-tab { word-break: break-word; }
 
-/* --- Desktop / big screens: keep one row and put "Our Offering" in the middle --- */
+
 @media (min-width: 993px) {
   .acca-tabs {
-    flex-wrap: nowrap;            /* don't wrap on desktop */
+    flex-wrap: nowrap;           
   }
   .acca-tab {
-    flex: 1 1 0;                  /* let all tabs share the row evenly */
-    min-width: 0;                 /* allow shrinking so all 5 fit */
+    flex: 1 1 0;                 
+    min-width: 0;                 
   }
   .acca-tab[data-tab="acca-offering"] {
-    order: 3;                     /* 1=first, 2=second, 3=middle, ... */
+    order: 3;                    
   }
 }
 
 /* --- Tablets / phones: allow wrapping and natural order --- */
 @media (max-width: 992px) {
-  .acca-tab[data-tab="acca-offering"] { order: unset; }  /* return to normal flow */
+  .acca-tab[data-tab="acca-offering"] { order: unset; }  
 }
 
 
@@ -3057,7 +3057,7 @@ section.why-us .why-grid {
 
 /* document */
 
-/* ================= DCX (unique namespace) ================= */
+
 /* ================= DCX (unique namespace) ================= */
 .dcx-wrap {
   --dcx-red: #e11d2e;
@@ -3302,7 +3302,7 @@ section.why-us .why-grid {
 
 /* Special emphasized card */
 .cma-feature-emph {
-  background: var(--brand);     /* same red as others */
+  background: var(--brand);     
   border-radius: 12px;
   padding: 36px 28px;
   text-align: center;
@@ -3336,23 +3336,15 @@ section.why-us .why-grid {
 /* Center this card in the grid on wider screens */
 @media (min-width: 1024px){
   .cma-features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .cma-feature-emph { grid-column: 2; }  /* put it in the middle column */
+  .cma-feature-emph { grid-column: 2; }  
 }
 
-/* If your grid is 4 columns on desktop, use this instead: */
-/*
-@media (min-width: 1200px){
-  .cma-features-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .cma-feature-emph { grid-column: 2 / span 2; }  // centered across 2 middle columns
-}
-*/
 
-/* course overview(medical arabic) */
 
 :root{
-  --brand:#e11d2e;    /* your site red */
-  --ink:#111827;      /* near-black text */
-  --muted:#6b7280;    /* gray text */
+  --brand:#e11d2e;   
+  --ink:#111827;      
+  --muted:#6b7280;    
 }
 
 /* Section wrapper */
@@ -3387,13 +3379,13 @@ section.why-us .why-grid {
   padding: 0;
   margin: 0 0 16px;
   display: grid;
-  gap: 14px;                /* vertical spacing between items */
+  gap: 14px;               
 }
 
-/* Bullet icon (red ring with white dot like screenshot) */
+
 .co-list li{
   position: relative;
-  padding-left: 38px;       /* room for bullet */
+  padding-left: 38px;       
   line-height: 1.65;
 }
 
@@ -3405,8 +3397,8 @@ section.why-us .why-grid {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--brand);         /* red disc */
-  box-shadow: 0 0 0 3px #fff inset; /* thin inner white ring look */
+  background: var(--brand);        
+  box-shadow: 0 0 0 3px #fff inset; /
 }
 
 /* Optional: small white center dot for emphasis */
@@ -3444,10 +3436,10 @@ section.why-us .why-grid {
 /* oet */
 
 :root{
-  --brand:#e11d2e;   /* red */
-  --ink:#111827;     /* text */
-  --muted:#6b7280;   /* grey text */
-  --lightgrey:#f7f7f7; /* background */
+  --brand:#e11d2e;  
+  --ink:#111827;     
+  --muted:#6b7280;   
+  --lightgrey:#f7f7f7; 
 }
 
 .why-oet {
@@ -3566,20 +3558,20 @@ section.why-us .why-grid {
 @media (max-width: 992px) {
   /* Ensure only the Spoken Arabic LI (the one that has a .sub-dropdown) is positioned */
   .dropdown .has-submenu {
-    position: relative;               /* anchor for the overlapping panel */
+    position: relative;               
   }
 
   /* Overlapping panel: hidden by default */
   .dropdown .has-submenu > .sub-dropdown {
     position: absolute;
-    top: 100%;                        /* directly under "Spoken Arabic" row */
+    top: 100%;                      
     left: 0;
-    width: 100%;                      /* full width of first-level dropdown */
+    width: 100%;                     
     background: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 8px 20px rgba(0,0,0,.12);
     z-index: 9999;
-    display: none !important;         /* keep it off unless focused/hovered */
+    display: none !important;         
   }
 
   /* SHOW when the LI has focus (tap on the <a> gives it focus) */
@@ -3716,7 +3708,7 @@ background-color: #f5f5f5;
 @media (max-width: 900px){
   .ltc-wrap{ grid-template-columns:1fr; }
   .ltc-grid-2{ grid-template-columns:1fr; }
-  .ltc-wa span{ display:none; } /* icon-only on small screens */
+  .ltc-wa span{ display:none; } 
 }
 
 /* ===== Video Section (fixed selectors + spacing) ===== */
@@ -3735,8 +3727,8 @@ background-color: #f5f5f5;
 /* matches your HTML: .ltc-video-container */
 .ltc-video-container {
   max-width: 1200px;
-  margin: 0 auto;            /* center the block */
-  padding: 0 20px 12px;      /* space left/right + a little below the grid */
+  margin: 0 auto;           
+  padding: 0 20px 12px;      
 }
 
 .ltc-video-container > h2 {
@@ -3745,7 +3737,7 @@ background-color: #f5f5f5;
   letter-spacing: 0.2px;
   margin: 0 0 20px;
   text-shadow: 0 1px 0 rgba(0,0,0,0.25);
-  text-align: center;   /* CENTERED */
+  text-align: center;   
 }
 
 
@@ -3775,7 +3767,7 @@ background-color: #f5f5f5;
   border: 1px solid var(--card-border);
   box-shadow: 0 10px 28px rgba(0,0,0,0.25);
 
-  object-fit: cover;        /* tidy mixed aspect ratios */
+  object-fit: cover;       
   object-position: center;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
@@ -3827,16 +3819,16 @@ background-color: #f5f5f5;
 }
 
 
-/* === FORCE NAV LEFT (logo + all links), CTA far right === */
 
-/* put items in a single row, no “space-between” gap */
+
+
 .nav-wrap {
   justify-content: flex-start !important;
-  padding-left: 12px !important;    /* smaller left padding */
+  padding-left: 12px !important;    
   gap: 10px !important;              /* space between logo and links */
 }
 
-/* make the nav only as wide as its contents (don’t stretch) */
+
 .nav {
   flex: 0 0 auto !important;
   width: auto !important;
@@ -3850,8 +3842,8 @@ background-color: #f5f5f5;
   display: flex !important;
   justify-content: flex-start !important;
   align-items: left !important;
-  gap: 16px !important;              /* adjust spacing between links */
-  margin: 0 !important;              /* kill any left margin */
+  gap: 16px !important;              
+  margin: 0 !important;             
   padding: 0 !important;
   
 }
@@ -3960,8 +3952,8 @@ background-color: #f5f5f5;
 .video-wrap {
   position: relative;
   width: 100%;
-  max-width: 420px; /* adjust size if needed */
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  max-width: 420px; 
+  padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
   border-radius: 12px;
@@ -3980,8 +3972,8 @@ background-color: #f5f5f5;
 
 .acca-video-wrap {
   margin: 18px auto 0;
-  width: 560px;   /* bigger width */
-  height: 315px;  /* bigger height (16:9 ratio) */
+  width: 560px;   
+  height: 315px;  
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
@@ -4012,7 +4004,7 @@ background-color: #f5f5f5;
 
 /* Single image block */
 .cma-proud-single {
-  max-width: 680px;        /* adjust overall size here */
+  max-width: 680px;        
   margin: 0 auto;
 }
 
