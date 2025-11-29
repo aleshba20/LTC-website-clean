@@ -5,7 +5,7 @@ BASE = "https://aleshba20.github.io/LTC-website-clean/"
 def encode_url(u: str) -> str:
     """Percent-encode path, then XML-escape for <loc>."""
     parts = urllib.parse.urlsplit(u)
-    # percent-encode path ONLY; leave scheme/host untouched
+  
     path = urllib.parse.quote(parts.path, safe="/-._~")
     rebuilt = urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, "", ""))
     return html.escape(rebuilt, quote=False)
