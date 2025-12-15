@@ -244,10 +244,65 @@ Diploma in Excel Training and Certificate
   </div>
 </section>
 
-<br>
-<br>
-<br>
-<br>
+
+
+<!-- Vision and Mission -->
+   <section class="vm-section vm-animate">
+  <div class="wrap">
+    <h2 class="vm-title">Vision &amp; Mission</h2>
+    <p class="vm-sub">
+      Clear direction, practical outcomes, and globally recognized training for learners and organizations in Qatar.
+    </p>
+
+    <div class="vm-grid">
+      <article class="vm-card">
+        <h3 class="vm-card-title">
+          <i class="fa-solid fa-eye" aria-hidden="true"></i> Our Vision
+        </h3>
+        <p class="vm-text">
+          To be Qatar’s most trusted training centre, known for industry-aligned learning, measurable outcomes,
+          and career-ready skills that strengthen individuals and organizations.
+        </p>
+      </article>
+
+      <article class="vm-card">
+        <h3 class="vm-card-title">
+          <i class="fa-solid fa-bullseye" aria-hidden="true"></i> Our Mission
+        </h3>
+        <p class="vm-text">
+          To deliver high-quality, instructor-led training through hands-on practice, flexible scheduling,
+          and recognized certifications, while supporting learners with guidance from enrolment to achievement.
+        </p>
+
+        <ul class="vm-list">
+          <li>Offer practical programs with real projects and labs</li>
+          <li>Maintain strong instructor quality and learner support</li>
+          <li>Provide certifications and exam-focused preparation</li>
+          <li>Partner with organizations to upskill their teams</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  (function () {
+    var section = document.querySelector(".vm-animate");
+    if (!section) return;
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          section.classList.add("is-visible");
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    obs.observe(section);
+  })();
+</script>
 
 
 

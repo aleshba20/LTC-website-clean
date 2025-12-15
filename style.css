@@ -381,10 +381,20 @@ body{
   background: #f5f5f5;
 }
 
+/* divider between courses */
+.dropdown li {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
 /* show dropdown on hover */
 .has-dot:hover .dropdown {
   display: block;
 }
+
 
 /* CFA Course */
 
@@ -4135,7 +4145,170 @@ background-color: #f5f5f5;
   color: red !important;
 }
 
+/* Vision and Mission Section */
 
+/* ================================
+   Vision & Mission Section
+   Bold Typography + Animations
+   Theme Aligned
+================================ */
 
+.vm-section {
+  padding: 80px 0;
+  background: var(--bg);
+  color: var(--ink);
+}
 
+/* Main title */
+.vm-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+  position: relative;
+  padding-left: 14px;
+}
 
+.vm-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 5px;
+  height: 32px;
+  background: var(--brand);
+  border-radius: 999px;
+}
+
+/* Subtitle */
+.vm-sub {
+  max-width: 820px;
+  color: var(--muted);
+  margin: 0 0 32px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* Grid */
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Cards */
+.vm-card {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transform: translateY(14px);
+  opacity: 0;
+  transition:
+    transform 600ms ease,
+    opacity 600ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.vm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.16);
+}
+
+/* Card titles */
+.vm-card-title {
+  margin: 0 0 12px;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.vm-card-title i {
+  color: var(--brand);
+}
+
+/* Body text */
+.vm-text {
+  margin: 0 0 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* List */
+.vm-list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.vm-list li {
+  margin: 6px 0;
+  font-weight: 600;
+}
+
+.vm-list li::marker {
+  color: var(--brand);
+}
+
+/* ================================
+   Animation States
+================================ */
+
+.vm-animate .vm-title,
+.vm-animate .vm-sub {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 600ms ease, opacity 600ms ease;
+}
+
+.vm-animate.is-visible .vm-title,
+.vm-animate.is-visible .vm-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vm-animate.is-visible .vm-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger cards */
+.vm-animate.is-visible .vm-card:nth-child(1) {
+  transition-delay: 120ms;
+}
+
+.vm-animate.is-visible .vm-card:nth-child(2) {
+  transition-delay: 240ms;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .vm-title,
+  .vm-sub,
+  .vm-card {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .vm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-title {
+    font-size: 2rem;
+  }
+}
