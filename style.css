@@ -4117,4 +4117,25 @@ background-color: #f5f5f5;
   background: #0b1020;
 }
 
+/* Hamza styling */
+
+.ltc-list li {
+  font-weight: 600;
+}
+
+.dot{
+  cursor: pointer;
+  color: grey !important;
+  outline: none;
+  display: inline-block;
+  transition: color 0.15s ease;
+}
+
+.dot:hover{
+  color: red !important;
+}
+
+
+
+
 
