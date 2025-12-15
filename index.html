@@ -103,9 +103,18 @@
 
          <nav class="nav">
           <ul class="nav-links">
-            <li><a class="active" href="home.html">Home</a></li>
-            <li><a href="index.html">About Us</a></li>
-          
+            <li>
+  <a class="nav-link nav-home active" href="home.html" style="font-size: 16px;">
+    Home
+  </a>
+</li>
+
+<li>
+  <a class="nav-link nav-about" href="index.html" style="font-size: 16px;">
+    About Us
+  </a>
+</li>
+
           
 
             <!-- Accounting & Finance -->
@@ -237,77 +246,93 @@
       <!-- <button class="hero-arrow right" aria-label="Next slide">❯</button> -->
     </section>
 
-    <!-- ======= About Us teaser (as seen below the fold) ======= -->
-    <!-- ===== ABOUT US ===== -->
-    <section class="about alt-bg">
-      <div class="wrap about-grid">
-        <!-- Text -->
-        <div class="about-text">
-          <span class="kicker">About Us</span>
-          <h2 class="about-title">
-            Training that’s practical, current, and built for careers.
-          </h2>
-          <p class="about-lead">
-            We deliver industry-aligned courses taught by experienced
-            instructors, with flexible schedules and hands-on labs designed to
-            build real skills.
-          </p>
+  <section class="about alt-bg about-section">
+  <div
+    class="wrap about-grid about-grid-custom"
+    style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    "
+  >
+    <!-- Media / Collage (LEFT) -->
+    <div
+      class="about-media about-media-left"
+      style="grid-column: 1;"
+    >
+      <div class="card card-a">
+        <img
+          src="images/477545745_18168232465322896_7467622563352245792_n.png"
+          alt="Classroom session"
+        />
+      </div>
 
-          <ul class="about-list">
-            <li>Professional certificates &amp; exam preparation</li>
-            <li>Weekend &amp; evening batches</li>
-            <li>Small groups, mentor support, real projects</li>
-          </ul>
+      <div class="card card-b">
+        <img
+          src="images/476468516_18168232462322896_5533524760515299385_n.png"
+          alt="Hands-on training"
+        />
+      </div>
 
-          <div class="about-stats">
-            <div class="stat">
-              <div class="stat-num">60+</div>
-              <div class="stat-label">Courses</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">5000+</div>
-              <div class="stat-label">Learners</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">95%</div>
-              <div class="stat-label">Satisfaction</div>
-            </div>
-          </div>
+      <div class="about-badge about-badge-float">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e11d2e" />
+              <stop offset="1" stop-color="#ff6b6b" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="58" fill="url(#g)" />
+        </svg>
+        <span>#BEST</span>
+      </div>
+    </div>
 
-          <a href="contact.html" class="btn about-btn">Get in Touch</a>
+    <!-- Text (RIGHT) -->
+    <div
+      class="about-text about-text-right"
+      style="grid-column: 2;"
+    >
+      <span class="kicker about-kicker">About Us</span>
+
+      <h2 class="about-title">
+        Training that’s practical, current, and built for careers.
+      </h2>
+
+      <p class="about-lead">
+        We deliver industry-aligned courses taught by experienced
+        instructors, with flexible schedules and hands-on labs designed to
+        build real skills.
+      </p>
+
+      <ul class="about-list">
+        <li>Professional certificates &amp; exam preparation</li>
+        <li>Weekend &amp; evening batches</li>
+        <li>Small groups, mentor support, real projects</li>
+      </ul>
+
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">60+</div>
+          <div class="stat-label">Courses</div>
         </div>
-
-        <!-- Media / Collage -->
-        <div class="about-media">
-          <div class="card card-a">
-            <img
-              src="images/477545745_18168232465322896_7467622563352245792_n.png"
-              alt="Classroom session"
-            />
-          </div>
-          <div class="card card-b">
-            <img
-              src="images/476468516_18168232462322896_5533524760515299385_n.png"
-              alt="Hands-on training"
-            />
-          </div>
-
-          <!-- Floating badge -->
-          <div class="about-badge">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#e11d2e" />
-                  <stop offset="1" stop-color="#ff6b6b" />
-                </linearGradient>
-              </defs>
-              <circle cx="60" cy="60" r="58" fill="url(#g)" />
-            </svg>
-            <span>#BEST</span>
-          </div>
+        <div class="stat">
+          <div class="stat-num">5000+</div>
+          <div class="stat-label">Learners</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">95%</div>
+          <div class="stat-label">Satisfaction</div>
         </div>
       </div>
-    </section>
+
+      <a href="contact.html" class="btn about-btn about-btn-primary">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- what we do -->
 
