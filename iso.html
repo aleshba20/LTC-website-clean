@@ -133,7 +133,7 @@
                 <li><a href="admin.html">Admin Secretarial Skills</a></li>
                 <li><a href="cips.html">CIPS</a></li>
                 <li><a href="business.html">Business Management</a></li>
-                <li><a href="train.html">Train The Trainer</a></li>
+              
                   <li><a href="CAPM.html">CAPM</a></li>
                     <li><a href="PPTT.html">PPTT</a></li>
               </ul>
@@ -141,7 +141,7 @@
 
             <!-- Health & Safety -->
             <li class="has-dot">
-               <a href="healthsaftety.html">Health and Safety</a>
+             <a href="healthsaftety.html">Safety Training</a>
               
               <span class="dot" tabindex="0" role="button" aria-label="Toggle">▼</span>
               <ul class="dropdown">
@@ -154,6 +154,8 @@
                   <li><a href="level6.html"> Nebosh EMC Level 3</a></li>
                    <li><a href="idip.html">NEBOSH IDIP</a></li>
                     <li><a href="psm.html">NEBOSH PSM</a></li>
+                        <li><a href="food_safty.html">Food & Safety</a></li>
+                               <li><a href="train.html">Train The Trainer</a></li>
               </ul>
             </li>
 
@@ -493,6 +495,98 @@ document.querySelectorAll('.acca-tabs-section').forEach(section => {
   </div>
 </section>
 
+<section class="acca-tabs-section">
+  <!-- Tabs -->
+  <div class="acca-tabs">
+    <button class="acca-tab active" data-tab="iso-benefits">Key Benefits</button>
+    <button class="acca-tab" data-tab="iso-who">Who is this For?</button>
+    <button class="acca-tab" data-tab="iso-topics">Topics Covered</button>
+    <button class="acca-tab" data-tab="iso-assessment">Assessment Mode</button>
+  </div>
+
+  <!-- Key Benefits -->
+  <div class="acca-tab-content active" id="iso-benefits">
+    <div class="acca-card">
+      <h2>Key Benefits</h2>
+      <ul>
+        <li>Understand the purpose of an occupational health and safety management system.</li>
+        <li>Learn the purpose of occupational health and safety management system standards.</li>
+        <li>Understand management system audits and third-party certification.</li>
+        <li>Recognize the business benefits of improved OHSMS performance.</li>
+        <li>Develop the skills to plan, conduct, report, and follow up an OHSMS audit.</li>
+        <li>Gain competence in auditing in accordance with ISO 19011 and ISO/IEC 17021.</li>
+        <li>Establish conformity of an occupational health and safety management system with ISO 45001.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Who is this For -->
+  <div class="acca-tab-content" id="iso-who">
+    <div class="acca-card">
+      <h2>Who is this For?</h2>
+      <ul>
+        <li>Delegates with some understanding of the content, application, development, and implementation of the ISO 45001 series of standards.</li>
+        <li>Those who wish to practice as an OHSMS auditor.</li>
+        <li>Management Representatives.</li>
+        <li>Internal auditors.</li>
+        <li>Second-party and third-party auditors.</li>
+        <li>Professionals responsible for providing value-added OHSMS audits to support continual improvement.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Topics Covered -->
+  <div class="acca-tab-content" id="iso-topics">
+    <div class="acca-card">
+      <h2>Topics Covered</h2>
+      <ul>
+        <li>ISO 45001:2018 requirements for Occupational Health and Safety Management Systems.</li>
+        <li>The framework for providing a safe workplace, facilities, infrastructures, processes, and activities.</li>
+        <li>How to proactively prevent injury and ill-health and enhance OHS performance.</li>
+        <li>Audit techniques for planning, implementing, reviewing, and improving an OHSMS audit.</li>
+        <li>The Plan-Do-Check-Act (PDCA) cycle.</li>
+        <li>The purpose and benefits of an OHSMS.</li>
+        <li>Basic management of OHS through hazard identification, risk assessment, and risk control.</li>
+        <li>Compliance with legal and other requirements.</li>
+        <li>Relevant national and local OHS legislation and requirements.</li>
+        <li>Terms and definitions in ISO 45001.</li>
+        <li>Auditing in line with ISO 19011:2018 and ISO/IEC 17021.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Assessment Mode -->
+  <div class="acca-tab-content" id="iso-assessment">
+    <div class="acca-card">
+      <h2>Assessment Mode</h2>
+      <ul>
+        <li>Delegates are assessed throughout the session.</li>
+        <li>Learners must attend an open-book online exam within 30 days of the last day of the course.</li>
+        <li>Exam format: Online, open-book exam proctored by CQI IRCA.</li>
+        <li>Duration: 2 hours 30 minutes.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Tabs JS -->
+<script>
+document.querySelectorAll('.acca-tabs-section').forEach(section => {
+  const tabs   = section.querySelectorAll('.acca-tab');
+  const panels = section.querySelectorAll('.acca-tab-content');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const target = section.querySelector('#' + btn.dataset.tab);
+      if (target) target.classList.add('active');
+    });
+  });
+});
+</script>
 
 
 

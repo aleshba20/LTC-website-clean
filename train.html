@@ -158,7 +158,7 @@
                 <li><a href="admin.html">Admin Secretarial Skills</a></li>
                 <li><a href="cips.html">CIPS</a></li>
                 <li><a href="business.html">Business Management</a></li>
-                <li><a href="train.html">Train The Trainer</a></li>
+             
                   <li><a href="CAPM.html">CAPM</a></li>
                     <li><a href="PPTT.html">PPTT</a></li>
               </ul>
@@ -166,7 +166,7 @@
 
             <!-- Health & Safety -->
             <li class="has-dot">
-               <a href="healthsaftety.html">Health and Safety</a>
+             <a href="healthsaftety.html">Safety Training</a>
               
               <span class="dot" tabindex="0" role="button" aria-label="Toggle">▼</span>
               <ul class="dropdown">
@@ -179,6 +179,8 @@
                   <li><a href="level6.html"> Nebosh EMC Level 3</a></li>
                    <li><a href="idip.html">NEBOSH IDIP</a></li>
                     <li><a href="psm.html">NEBOSH PSM</a></li>
+                        <li><a href="food_safty.html">Food & Safety</a></li>
+                               <li><a href="train.html">Train The Trainer</a></li>
               </ul>
             </li>
 
@@ -269,34 +271,97 @@
 
     <br /><br /><br /><br />
 
-    <!-- Why Choose Leaders -->
-    <section class="why-oet">
-      <div class="why-oet-inner">
-        <h2>Program Highlights</h2>
-        <ul class="why-oet-list">
-          <li>
-            <span>Comprehensive Practical Training:</span> Hands‑on sessions to
-            master facilitation, presentation, and assessment.
-          </li>
-          <li>
-            <span>International Certification:</span> Pathways to HABC Level 4
-            TTT or OTHM Level 4 ELP — both OFQUAL‑approved.
-          </li>
-          <li>
-            <span>Multiple Certificates:</span> Leaders TTT certificate
-            (attested in Qatar) plus a UK awarding‑body credential.
-          </li>
-          <li>
-            <span>Flexible Tracks:</span> Options to focus on corporate
-            training, education, leadership coaching, or soft skills.
-          </li>
-          <li>
-            <span>Career Support:</span> Guidance on attestation procedures and
-            professional development.
-          </li>
-        </ul>
-      </div>
-    </section>
+   <section class="acca-tabs-section">
+  <!-- Tabs -->
+  <div class="acca-tabs">
+    <button class="acca-tab active" data-tab="iso-benefits">Key Benefits</button>
+    <button class="acca-tab" data-tab="iso-who">Who is this For?</button>
+    <button class="acca-tab" data-tab="iso-topics">Topics Covered</button>
+    <button class="acca-tab" data-tab="iso-assessment">Assessment Mode</button>
+  </div>
+
+  <!-- Key Benefits -->
+  <div class="acca-tab-content active" id="iso-benefits">
+    <div class="acca-card">
+      <h2>Key Benefits</h2>
+      <ul>
+        <li>Supports a role in the workplace for trainers.</li>
+        <li>Suitable for both new and experienced trainers.</li>
+        <li>Helps improve classroom and teaching skills.</li>
+        <li>Provides a qualification to deliver regulated training.</li>
+        <li>Gives learners a strong foundation to enter the training field.</li>
+        <li>Develops planning, preparation, and delivery skills.</li>
+        <li>Improves delivery methods, questioning techniques, and time management.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Who is this For -->
+  <div class="acca-tab-content" id="iso-who">
+    <div class="acca-card">
+      <h2>Who is this For?</h2>
+      <ul>
+        <li>New trainers starting their career.</li>
+        <li>Experienced trainers looking to improve skills.</li>
+        <li>Internal workplace trainers.</li>
+        <li>External trainers and facilitators.</li>
+        <li>Individuals who want to deliver regulated qualifications.</li>
+        <li>Those using pre-prepared materials for workplace training.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Topics Covered -->
+  <div class="acca-tab-content" id="iso-topics">
+    <div class="acca-card">
+      <h2>Topics Covered</h2>
+      <ul>
+        <li>Effective delivery of training sessions.</li>
+        <li>Planning and preparation techniques.</li>
+        <li>Training delivery skills.</li>
+        <li>Different delivery methods.</li>
+        <li>Questioning techniques.</li>
+        <li>Time management skills.</li>
+        <li>Microteaching session practice.</li>
+        <li>Creating simple timed lesson plans.</li>
+        <li>Self-evaluation of training performance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Assessment Mode -->
+  <div class="acca-tab-content" id="iso-assessment">
+    <div class="acca-card">
+      <h2>Assessment Mode</h2>
+      <ul>
+        <li>Assessment includes a practical evaluation and a self-evaluation report.</li>
+        <li>Learners must deliver 1 or 2 microteaching sessions.</li>
+        <li>Total duration of sessions should be 20 to 30 minutes.</li>
+        <li>A simple timed lesson plan must be submitted.</li>
+        <li>A self-evaluation report must be completed and submitted.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Tabs JS -->
+<script>
+document.querySelectorAll('.acca-tabs-section').forEach(section => {
+  const tabs   = section.querySelectorAll('.acca-tab');
+  const panels = section.querySelectorAll('.acca-tab-content');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const target = section.querySelector('#' + btn.dataset.tab);
+      if (target) target.classList.add('active');
+    });
+  });
+});
+</script>
 
     <br /><br /><br /><br />
 
