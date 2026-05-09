@@ -6,59 +6,72 @@ require __DIR__ . '/phpmailer/src/Exception.php';
 require __DIR__ . '/phpmailer/src/PHPMailer.php';
 require __DIR__ . '/phpmailer/src/SMTP.php';
 
-// ---- SMTP (fill the real password locally; do not commit) ----
 $SMTP_HOST = 'mail.leaders.qa';
-$SMTP_PORT = 587;
-$SMTP_USER = 'alishba@leaders.qa';
-$SMTP_PASS = 'alishba@leaders.qa';
-$TO_EMAIL  = 'alishba@leaders.qa';
+$SMTP_PORT = 465;
+$SMTP_USER = 'website@leaders.qa';
+$SMTP_PASS = 'Website@2026';
+
+$TO_EMAIL  = 'info@leaders.qa';
 $TO_NAME   = 'Leaders Training Centre';
 
-// Accept POST only
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit('Method Not Allowed'); }
-// Honeypot
-if (!empty($_POST['website'] ?? '')) { header('Location: thank-you.html'); exit; }
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method Not Allowed');
+}
 
-// Inputs
+if (!empty($_POST['company_website'] ?? '')) {
+    exit('Spam detected.');
+}
+
 $name    = trim($_POST['name'] ?? '');
 $email   = trim($_POST['email'] ?? '');
 $phone   = trim($_POST['phone'] ?? '');
+$course  = trim($_POST['course'] ?? '');
 $message = trim($_POST['message'] ?? '');
-if ($name === '' || $email === '' || $phone === '' || $message === '') { http_response_code(422); exit('Missing required fields.'); }
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { http_response_code(422); exit('Invalid email.'); }
 
-// Build bodies
-$eName    = htmlspecialchars($name,    ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-$eEmail   = htmlspecialchars($email,   ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-$ePhone   = htmlspecialchars($phone,   ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-$eMessage = nl2br(htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'));
+if ($name === '' || $email === '' || $phone === '' || $course === '' || $message === '') {
+    exit('Missing required fields');
+}
 
-$bodyHtml = <<<HTML
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    exit('Invalid email format');
+}
+
+$eName    = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+$eEmail   = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+$ePhone   = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
+$eCourse  = htmlspecialchars($course, ENT_QUOTES, 'UTF-8');
+$eMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+
+$bodyHtml = "
 <h2>New Contact Form Submission</h2>
-<table cellpadding="6" cellspacing="0">
-  <tr><td><strong>Name</strong></td><td>{$eName}</td></tr>
-  <tr><td><strong>Email</strong></td><td>{$eEmail}</td></tr>
-  <tr><td><strong>Phone</strong></td><td>{$ePhone}</td></tr>
-</table>
+<p><strong>Name:</strong> $eName</p>
+<p><strong>Email:</strong> $eEmail</p>
+<p><strong>Phone:</strong> $ePhone</p>
+<p><strong>Selected Course:</strong> $eCourse</p>
 <hr>
-<p style="white-space:pre-wrap;">{$eMessage}</p>
-HTML;
+<p><strong>Message:</strong></p>
+<p>$eMessage</p>
+";
 
-$bodyText = "New Contact Form Submission\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\n{$message}\n";
+$bodyText = "New Contact Form Submission\n"
+          . "Name: $name\n"
+          . "Email: $email\n"
+          . "Phone: $phone\n"
+          . "Selected Course: $course\n\n"
+          . "Message:\n$message";
 
 $mail = new PHPMailer(true);
 
 try {
-    // --- IMPORTANT: keep debug OFF in production ---
-    $mail->SMTPDebug   = 0;           // 0 = no SMTP debug output
-    $mail->Debugoutput = 'html';      // irrelevant when debug=0
+    $mail->SMTPDebug = 0;
 
     $mail->isSMTP();
     $mail->Host       = $SMTP_HOST;
     $mail->SMTPAuth   = true;
     $mail->Username   = $SMTP_USER;
     $mail->Password   = $SMTP_PASS;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // switch to ENCRYPTION_SMTPS + 465 if needed
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = $SMTP_PORT;
     $mail->CharSet    = 'UTF-8';
 
@@ -67,20 +80,17 @@ try {
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(true);
-    $mail->Subject = 'New Contact Message';
+    $mail->Subject = 'New Course Enquiry - ' . $course;
     $mail->Body    = $bodyHtml;
     $mail->AltBody = $bodyText;
 
     $mail->send();
 
-    // Redirect to a separate thank-you page
     header('Location: thank-you.html');
     exit;
+
 } catch (Exception $e) {
-    http_response_code(500);
-    // Minimal error page without SMTP dump
-    echo '<!doctype html><meta charset="utf-8"><title>Thank you</title>
-      <style>body{font-family:system-ui,Segoe UI,Arial;padding:30px}</style>
-      <h1>Thank you</h1><p>Your message has been sent.</p>
-      <p><a href="contact.html">Back to contact page</a></p>';
+    echo "<h1 style='color:red'>EMAIL FAILED</h1>";
+    echo "<p>" . htmlspecialchars($mail->ErrorInfo, ENT_QUOTES, 'UTF-8') . "</p>";
 }
+?>
