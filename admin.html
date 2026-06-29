@@ -444,16 +444,243 @@ document.querySelectorAll('.submenu-toggle').forEach(toggle => {
             through industry-recognized, hands-on training programs, practical
             workshops, and real office simulations.
              <div>
-           <a
-  class="pdf-download-btn"
-  href="pdf/Admin%20and%20secretarial%20(1)%20(2).pdf"
-  target="_blank"
-  rel="noopener"
->
-  📄 View Admin & Secretarial Brochure (PDF)
+
+
+
+<!-- BROCHURE BUTTON -->
+<a href="#" 
+   class="pdf-download-btn" 
+   onclick="openBrochurePopup(event)"
+   style="
+      display:inline-block;
+      background:#ef233c;
+      color:#fff;
+      padding:16px 28px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:20px;
+      transition:0.3s;
+   ">
+   📄 View Admin & Secretarial Brochure (PDF)
 </a>
+
+<!-- POPUP -->
+<div id="brochurePopup" 
+     class="popup-overlay"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.7);
+        z-index:999999;
+        justify-content:center;
+        align-items:center;
+     ">
+
+  <div class="popup-box"
+       style="
+          background:#ffffff;
+          width:90%;
+          max-width:500px;
+          padding:35px;
+          border-radius:20px;
+          position:relative;
+          text-align:center;
+          box-shadow:0 20px 60px rgba(0,0,0,0.3);
+          animation:popupAnim .3s ease;
+       ">
+
+    <!-- CLOSE BUTTON -->
+    <button type="button" 
+            class="popup-close" 
+            onclick="closeBrochurePopup()"
+            style="
+               position:absolute;
+               top:12px;
+               right:15px;
+               border:none;
+               background:none;
+               font-size:30px;
+               cursor:pointer;
+               color:#000;
+            ">
+      ×
+    </button>
+
+    <h2 style="
+        font-size:36px;
+        margin-bottom:10px;
+        color:#111827;
+    ">
+      Get Brochure
+    </h2>
+
+    <p style="
+       color:#555;
+       margin-bottom:25px;
+       font-size:16px;
+    ">
+      Fill your details to access the brochure.
+    </p>
+
+    <form action="brochure-form.php" method="POST">
+
+      <input 
+        type="hidden" 
+        name="brochure" 
+        value="pdf/Admin and secretarial (1) (2).pdf"
+      >
+
+      <!-- NAME -->
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Your Name" 
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- PHONE -->
+      <input 
+        type="text" 
+        name="phone" 
+        placeholder="Phone Number" 
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- EMAIL -->
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Email Address" 
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- COURSE -->
+      <select 
+        name="course" 
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:20px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+        <option value="Admin & Secretarial" selected>
+          Admin & Secretarial
+        </option>
+      </select>
+
+      <!-- SUBMIT BUTTON -->
+      <button 
+        type="submit" 
+        class="brochure-submit-btn"
+        style="
+           width:100%;
+           padding:15px;
+           background:#ef233c;
+           color:#fff;
+           border:none;
+           border-radius:12px;
+           font-size:18px;
+           font-weight:700;
+           cursor:pointer;
+           transition:0.3s;
+        "
+      >
+        Subscribe & View Brochure
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- INLINE JAVASCRIPT -->
+<script>
+
+function openBrochurePopup(event) {
+
+    event.preventDefault();
+
+    document.getElementById("brochurePopup").style.display = "flex";
+}
+
+function closeBrochurePopup() {
+
+    document.getElementById("brochurePopup").style.display = "none";
+}
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+window.onclick = function(event) {
+
+    let popup = document.getElementById("brochurePopup");
+
+    if (event.target === popup) {
+
+        popup.style.display = "none";
+    }
+}
+
+</script>
+
+<!-- INLINE ANIMATION -->
+<style>
+
+@keyframes popupAnim {
+
+    from {
+
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+</style>
+
         </div>
-          </p>
+       
         </div>
 
         <div class="cma-intro-image">

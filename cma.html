@@ -451,23 +451,239 @@ document.querySelectorAll('.submenu-toggle').forEach(toggle => {
         accountant within a span of 9 months to 1 Year
       </p>
 
-      <!-- <p class="cma-intro-text">
-        Contact our counselors for free advice at <strong>+974 31101550</strong>
-      </p>
+     
 
-      <!-- PDF Download Button -->
-      <a
-  class="pdf-download-btn"
-  href="pdf/CMA%20HANDBOOK.pdf"
-  target="_blank"
-  rel="noopener"
->
-  📄 View CMA Brochure (PDF)
+  <!-- CMA BROCHURE BUTTON -->
+<a href="#"
+   class="pdf-download-btn"
+   onclick="openCMAPopup(event)"
+   style="
+      display:inline-block;
+      background:#ef233c;
+      color:#fff;
+      padding:16px 28px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:20px;
+      transition:0.3s;
+   ">
+   📄 View CMA Brochure (PDF)
 </a>
+
+<!-- CMA POPUP -->
+<div id="cmaPopup"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.7);
+        z-index:999999;
+        justify-content:center;
+        align-items:center;
+     ">
+
+  <div
+       style="
+          background:#ffffff;
+          width:90%;
+          max-width:500px;
+          padding:35px;
+          border-radius:20px;
+          position:relative;
+          text-align:center;
+          box-shadow:0 20px 60px rgba(0,0,0,0.3);
+          animation:popupAnim .3s ease;
+       ">
+
+    <!-- CLOSE BUTTON -->
+    <button type="button"
+            onclick="closeCMAPopup()"
+            style="
+               position:absolute;
+               top:12px;
+               right:15px;
+               border:none;
+               background:none;
+               font-size:30px;
+               cursor:pointer;
+               color:#000;
+            ">
+      ×
+    </button>
+
+    <h2 style="
+        font-size:36px;
+        margin-bottom:10px;
+        color:#111827;
+    ">
+      Get CMA Brochure
+    </h2>
+
+    <p style="
+       color:#555;
+       margin-bottom:25px;
+       font-size:16px;
+    ">
+      Fill your details to access the brochure.
+    </p>
+
+    <form action="brochure-form.php" method="POST">
+
+      <!-- PDF PATH -->
+      <input
+        type="hidden"
+        name="brochure"
+        value="pdf/CMA HANDBOOK.pdf"
+      >
+
+      <!-- NAME -->
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- PHONE -->
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- EMAIL -->
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:15px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+
+      <!-- COURSE -->
+      <select
+        name="course"
+        required
+        style="
+          width:100%;
+          padding:14px;
+          margin-bottom:20px;
+          border:1px solid #ddd;
+          border-radius:10px;
+          font-size:16px;
+          box-sizing:border-box;
+        "
+      >
+        <option value="CMA" selected>
+          CMA
+        </option>
+      </select>
+
+      <!-- SUBMIT BUTTON -->
+      <button
+        type="submit"
+        style="
+           width:100%;
+           padding:15px;
+           background:#ef233c;
+           color:#fff;
+           border:none;
+           border-radius:12px;
+           font-size:18px;
+           font-weight:700;
+           cursor:pointer;
+        "
+      >
+        Subscribe & View Brochure
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+function openCMAPopup(event) {
+
+    event.preventDefault();
+
+    document.getElementById("cmaPopup").style.display = "flex";
+}
+
+function closeCMAPopup() {
+
+    document.getElementById("cmaPopup").style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+
+    let popup = document.getElementById("cmaPopup");
+
+    if (event.target === popup) {
+
+        popup.style.display = "none";
+    }
+});
+
+</script>
+
+<!-- ANIMATION -->
+<style>
+
+@keyframes popupAnim {
+
+    from {
+
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+</style>
     </section>
 
     <!-- ======= CMA Content Section ======= -->
-    <!-- ===== CMA Tabs Section ===== -->
+    
     <section class="cma-tabs-section">
       <!-- Tabs -->
       <div class="cma-tabs">

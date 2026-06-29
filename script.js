@@ -15,7 +15,7 @@
     index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(${-100 * index}%)`;
     dots.forEach((d, k) =>
-      d.setAttribute("aria-selected", k === index ? "true" : "false")
+      d.setAttribute("aria-selected", k === index ? "true" : "false"),
     );
   }
 
@@ -50,13 +50,13 @@
     dot.addEventListener("click", () => {
       go(i);
       start();
-    })
+    }),
   );
 
   root.addEventListener("mouseenter", stop);
   root.addEventListener("mouseleave", start);
   document.addEventListener("visibilitychange", () =>
-    document.hidden ? stop() : start()
+    document.hidden ? stop() : start(),
   );
 
   // init
@@ -67,7 +67,7 @@
 // WhatsApp Link
 const phone = "97431101550";
 const defaultMessage = encodeURIComponent(
-  "Hi, I'm messaging from the Leaders Education website: *Please Type your following enquiry after this text*"
+  "Hi, I'm messaging from the Leaders Education website: *Please Type your following enquiry after this text*",
 );
 const whatsappLink = `https://wa.me/${phone}?text=${defaultMessage}`;
 const whatsappAnchor = document.getElementById("whatsappLink");
@@ -99,7 +99,24 @@ document.addEventListener("DOMContentLoaded", function () {
         wrap.appendChild(video); // insert video player
         video.focus(); // accessibility: focus player
       },
-      { once: true }
+      { once: true },
     ); // run once; leave player in place
   });
+});
+
+function openBrochurePopup(event) {
+  event.preventDefault();
+  document.getElementById("brochurePopup").classList.add("active");
+}
+
+function closeBrochurePopup() {
+  document.getElementById("brochurePopup").classList.remove("active");
+}
+
+document.addEventListener("click", function (event) {
+  const popup = document.getElementById("brochurePopup");
+
+  if (event.target === popup) {
+    closeBrochurePopup();
+  }
 });

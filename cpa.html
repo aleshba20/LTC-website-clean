@@ -398,14 +398,89 @@ document.querySelectorAll('.submenu-toggle').forEach(toggle => {
 
   <p class="cma-intro-text">
  The CPA designation distinguishes licensed accounting professionals committed to protecting the public interest. These professionals offer financial statement audits and other attestation services to help inform investors about the financial health of organizations. They provide individuals and families with valuable knowledge and advice on taxes and financial planning. In business and industry, CPAs offer organizations around the world tax, financial reporting and advisory services to drive strategic decision-making and foster growth and success. To earn the CPA license, accounting professionals must have extensive education—at least 150 hours—pass a rigorous four-part exam and meet experience requirements. They must also commit to lifelong learning and adhere to a strict Code of Professional Conduct that requires competence, objectivity, integrity and independence
-<a
-  class="pdf-download-btn"
-  href="pdf/ACCA%20vs%20CPA.pdf"
-  target="_blank"
-  rel="noopener"
->
-  📄 View CPA vs ACCA Brochure (PDF)
-</a>
+<!-- CPA vs ACCA BROCHURE BUTTON -->
+<div>
+  <a href="#"
+     class="pdf-download-btn"
+     onclick="openCPAACCAPopup(event)"
+     style="display:inline-block;background:#ef233c;color:#fff;padding:16px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:20px;">
+    📄 View CPA vs ACCA Brochure (PDF)
+  </a>
+</div>
+
+<!-- CPA vs ACCA POPUP -->
+<div id="cpaAccaPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999999;justify-content:center;align-items:center;">
+
+  <div style="background:#fff;width:90%;max-width:500px;padding:35px;border-radius:20px;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popupAnim .3s ease;">
+
+    <button type="button" onclick="closeCPAACCAPopup()" style="position:absolute;top:12px;right:15px;border:none;background:none;font-size:30px;cursor:pointer;color:#000;">
+      ×
+    </button>
+
+    <h2 style="font-size:36px;margin-bottom:10px;color:#111827;">
+      Get CPA vs ACCA Brochure
+    </h2>
+
+    <p style="color:#555;margin-bottom:25px;font-size:16px;">
+      Fill your details to access the brochure.
+    </p>
+
+    <form action="brochure-form.php" method="POST">
+
+      <input type="hidden" name="brochure" value="pdf/ACCA vs CPA.pdf">
+
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <input type="text" name="phone" placeholder="Phone Number" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <input type="email" name="email" placeholder="Email Address" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <select name="course" required style="width:100%;padding:14px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+        <option value="CPA vs ACCA" selected>CPA vs ACCA</option>
+      </select>
+
+      <button type="submit" style="width:100%;padding:15px;background:#ef233c;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;">
+        Subscribe & View Brochure
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script>
+function openCPAACCAPopup(event) {
+  event.preventDefault();
+  document.getElementById("cpaAccaPopup").style.display = "flex";
+}
+
+function closeCPAACCAPopup() {
+  document.getElementById("cpaAccaPopup").style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+  var popup = document.getElementById("cpaAccaPopup");
+
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+});
+</script>
+
+<style>
+@keyframes popupAnim {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+</style>
   </p>
 
 

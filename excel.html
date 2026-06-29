@@ -409,20 +409,93 @@ Advanced Level Certificate
 
 Diploma in Excel Training and Certificate
       </p>
-      <a
-  class="pdf-download-btn"
-  href="pdf/MS%20Excel%20%20Intermediate%20to%20Advanced%20(1).pdf"
-  target="_blank"
-  rel="noopener"
->
-  📄 View Excel Brochure (PDF)
-</a>
+     <!-- EXCEL BROCHURE BUTTON -->
+<div>
+  <a href="#"
+     class="pdf-download-btn"
+     onclick="openExcelPopup(event)"
+     style="display:inline-block;background:#ef233c;color:#fff;padding:16px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:20px;">
+    📄 View Excel Brochure (PDF)
+  </a>
+</div>
 
-       <!-- <h3 class="cma-intro-subtitle">Achieve Your Desired Band and Accomplish Your Work, Study and Migration Goals with IELTS by IDP:</h3>
+<!-- EXCEL POPUP -->
+<div id="excelPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999999;justify-content:center;align-items:center;">
 
-      <p class="cma-intro-text">
-       Respected and accepted by more than 11,000 organisations in over 140 countries, find out which organisations accept IELTS scores.
-      </p> -->
+  <div style="background:#fff;width:90%;max-width:500px;padding:35px;border-radius:20px;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popupAnim .3s ease;">
+
+    <button type="button" onclick="closeExcelPopup()" style="position:absolute;top:12px;right:15px;border:none;background:none;font-size:30px;cursor:pointer;color:#000;">
+      ×
+    </button>
+
+    <h2 style="font-size:36px;margin-bottom:10px;color:#111827;">
+      Get Excel Brochure
+    </h2>
+
+    <p style="color:#555;margin-bottom:25px;font-size:16px;">
+      Fill your details to access the brochure.
+    </p>
+
+    <form action="brochure-form.php" method="POST">
+
+      <input type="hidden" name="brochure" value="pdf/MS Excel  Intermediate to Advanced (1).pdf">
+
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <input type="text" name="phone" placeholder="Phone Number" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <input type="email" name="email" placeholder="Email Address" required style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+
+      <select name="course" required style="width:100%;padding:14px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;">
+        <option value="Excel" selected>
+          Excel
+        </option>
+      </select>
+
+      <button type="submit" style="width:100%;padding:15px;background:#ef233c;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;">
+        Subscribe & View Brochure
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script>
+function openExcelPopup(event) {
+  event.preventDefault();
+  document.getElementById("excelPopup").style.display = "flex";
+}
+
+function closeExcelPopup() {
+  document.getElementById("excelPopup").style.display = "none";
+}
+
+window.addEventListener("click", function(event) {
+  var popup = document.getElementById("excelPopup");
+
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+});
+</script>
+
+<style>
+@keyframes popupAnim {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+</style>
+
+     
     </div>
 
     <div class="cma-intro-image">
